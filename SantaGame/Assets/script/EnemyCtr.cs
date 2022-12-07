@@ -7,7 +7,7 @@ public class EnemyCtr : MonoBehaviour
 {
     int enemyHP = 60;
 
-    player player;
+    public player player;
 
     NavMeshAgent agent;
 
