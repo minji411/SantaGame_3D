@@ -14,9 +14,13 @@ public class EnemyCtr : MonoBehaviour
     [SerializeField]
     Transform target;
 
+    public AudioClip clipDamage;
+    public AudioClip clipAttack;
+
     private void Awake()
     {
         agent = GetComponent<NavMeshAgent>();
+        player = GameObject.Find("Player").GetComponent<player>();
     }
 
     // Start is called before the first frame update
@@ -40,11 +44,13 @@ public class EnemyCtr : MonoBehaviour
     {
         if(collision.gameObject.tag == "Player")
         {
-            player.OnDamage();
+            SoundManager.instance.SFXPlay("damage", clipDamage);
+            player.Damaged();
         }
         else if(collision.gameObject.tag == "Weapon")
         {
-            enemyHP = enemyHP - player.damage;
+            SoundManager.instance.SFXPlay("attack", clipAttack);
+            enemyHP = enemyHP - 30;
         }
     }
 }

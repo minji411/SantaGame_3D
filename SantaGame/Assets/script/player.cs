@@ -1,11 +1,13 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class player : MonoBehaviour
 {
     int santaHP = 100;
-    public int damage = 30;
+    public Image HPgauge;
+    public Text HPtext;
 
     Rigidbody rigid;
     Animator anim;
@@ -23,6 +25,13 @@ public class player : MonoBehaviour
     public float jumpForce;
     bool isjump = false;
     public Vector3 moveDir;
+
+    private void Awake()
+    {
+        HPgauge = GameObject.Find("HPgauge").GetComponent<Image>();
+        HPtext = GameObject.Find("HPtext").GetComponent<Text>();
+    }
+
     void Start()
     {
         rigid = GetComponent<Rigidbody>();
@@ -40,6 +49,8 @@ public class player : MonoBehaviour
         Shooting();
         Jump();
         //Turn();
+
+        HPbar();
     }
 
     void Input_Axis()
@@ -105,9 +116,7 @@ public class player : MonoBehaviour
         
     //}
 
-
-    private float bspeed = 2f;
-
+    
     void Shooting()
     {
         //transform.Rotate(0f, rotAxis * bspeed, 0f, Space.Self);
@@ -119,9 +128,15 @@ public class player : MonoBehaviour
         }
     }
 
-    public void OnDamage()
+    public void Damaged()
     {
         santaHP = santaHP - 10;
+    }
+
+    public void HPbar()
+    {
+        HPgauge.fillAmount = santaHP / 100f;
+        HPtext.text = string.Format("HP {0}/100", santaHP);
     }
 
     private void OnCollisionEnter(Collision collision)
