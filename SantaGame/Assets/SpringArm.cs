@@ -47,8 +47,6 @@ public class SpringArm : MonoBehaviour
     public bool showCollisionProbe;
 
 
-    player movement;
-
     private void Awake()
     {
         desirtargetArmLength = 6f;
@@ -86,9 +84,9 @@ public class SpringArm : MonoBehaviour
         raycastPositions = new Vector3[collisionTestResolution];
         hits = new RaycastHit[collisionTestResolution];
         target = GameObject.Find("Orientation").GetComponent<Transform>();
+        targetSholder = GameObject.Find("Sholder").GetComponent<Transform>();
 
-    
-        movement = GameObject.Find("Player").GetComponent<player>();
+
 
     }
 
@@ -127,8 +125,7 @@ public class SpringArm : MonoBehaviour
         {
             target.rotation = Quaternion.Euler(0, transform.eulerAngles.y, 0);
         }
-
-     
+        socketOffset = new Vector3(0f, 0.4f, 0);
 
 
 
@@ -136,6 +133,7 @@ public class SpringArm : MonoBehaviour
 
     }
 
+ 
     private void OnDrawGizmosSelected()
     {
         if (!visualDebugging)
