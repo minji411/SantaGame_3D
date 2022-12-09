@@ -7,6 +7,7 @@ TagManager:
   - Floor
   - Enemy
   - Santa
+  - Weapon
   layers:
   - Default
   - TransparentFX

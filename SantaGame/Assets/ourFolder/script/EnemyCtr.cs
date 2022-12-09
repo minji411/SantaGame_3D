@@ -50,7 +50,7 @@ public class EnemyCtr : MonoBehaviour
         else if(collision.gameObject.tag == "Weapon")
         {
             SoundManager.instance.SFXPlay("attack", clipAttack);
-            enemyHP = enemyHP - 30;
+            enemyHP = enemyHP - 5;
         }
     }
 }
