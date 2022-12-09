@@ -122,7 +122,6 @@ public class player2 : MonoBehaviour
     }
     private void FixedUpdate()
     {
-
         MoveMent3D();
     }
     void Jump()
@@ -141,7 +140,6 @@ public class player2 : MonoBehaviour
         vAxis = Input.GetAxisRaw("Vertical");
         moveVec = new Vector3(hAxis, 0, vAxis).normalized;
         anim.SetBool("IsRun", moveVec != Vector3.zero);
-
     }
     public void DragCtrl()
     {
@@ -149,7 +147,6 @@ public class player2 : MonoBehaviour
             prigidbody.drag = groundDrag;
         else
         {
-        
             prigidbody.drag = 0f;
         }
     }
@@ -158,15 +155,12 @@ public class player2 : MonoBehaviour
     {
         DragCtrl();
    
- 
-    
         prigidbody.AddForce(Vector3.down * gravityForce);
         Quaternion q;
         Vector3 vec;
 
         if (hAxis != 0 || vAxis != 0)
         {
-
             vec = Camera.main.transform.TransformDirection(new Vector3(hAxis, 0, vAxis));
             vec.y = 0;
             q = Quaternion.LookRotation(vec);
@@ -185,9 +179,8 @@ public class player2 : MonoBehaviour
                 prigidbody.AddForce(moveDir.normalized * moveSpeed * 10f * airMultiplier, ForceMode.Force);
             }
   
-                transform.rotation = Quaternion.Slerp(transform.rotation, q, 15f * Time.deltaTime);
+            transform.rotation = Quaternion.Slerp(transform.rotation, q, 15f * Time.deltaTime);
         }
- 
     }
 
 
@@ -218,9 +211,6 @@ public class player2 : MonoBehaviour
 
     public void StateHandler()
     {
-
-     
-     
          if (grounded)
         {
             capsuleCollider.material.dynamicFriction = 1f;
@@ -272,7 +262,6 @@ public class player2 : MonoBehaviour
 
     }
 
-
     public void GroundCheck() //공중에서는 Collision , Trigger 체크를 못하니 함수로 체크
     {
         if (Physics.Raycast(transform.position, transform.up * -1, out hit, 200f))
@@ -284,7 +273,6 @@ public class player2 : MonoBehaviour
        
             }
         }
-
     }
 
     private void OnTriggerExit(Collider other) //CollisionExit로 하면 울퉁불퉁한곳에서 grouned가 false됨 Trigger 박스 긴거 하나 만들어서 체크중
@@ -329,8 +317,6 @@ public class player2 : MonoBehaviour
 
     }
 
-
-
     private void OnCollisionEnter(Collision collision)
     {
         if (Physics.Raycast(transform.position, transform.up * -1, out hit, 10f))
@@ -346,8 +332,6 @@ public class player2 : MonoBehaviour
     
                 if (landingCnt == 1) //점프를 하고 나면 landingCnt 1로 설정 -> 점프를 하고나면 착지를 해야하니 , 내려찍기후에도 1로 설정
                 {
-
-
                     landingCnt = 0; //착지 가능 횟수 0으로 설정
                 }
             }
@@ -357,6 +341,5 @@ public class player2 : MonoBehaviour
         {
             prigidbody.velocity = new Vector3(0, -3, 0);
         }
-
     }
 }
