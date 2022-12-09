@@ -277,7 +277,8 @@ public class player2 : MonoBehaviour
     {
         if (Physics.Raycast(transform.position, transform.up * -1, out hit, 200f))
         {
-            if (hit.distance > 0.5f)
+            //if (hit.distance > 0.5f)
+            if (hit.distance > 0.35f)
             {
                 grounded = false;
        
