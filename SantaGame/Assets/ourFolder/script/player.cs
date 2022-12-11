@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class player : MonoBehaviour
@@ -71,12 +72,15 @@ public class player : MonoBehaviour
     public void Damaged()
     {
         santaHP = santaHP - 10;
+
+   
     }
 
     public void HPbar()
     {
         HPgauge.fillAmount = santaHP / 100f;
         HPtext.text = string.Format("HP {0}/100", santaHP);
+
     }
 }
 

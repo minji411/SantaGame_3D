@@ -8,6 +8,7 @@ TagManager:
   - Enemy
   - Santa
   - Weapon
+  - Gift
   layers:
   - Default
   - TransparentFX

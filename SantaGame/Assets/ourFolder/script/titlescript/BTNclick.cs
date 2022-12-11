@@ -35,6 +35,7 @@ public class BTNclick : MonoBehaviour
         Time.timeScale = 1; //진행하기
     }
 
+
     public void next()
     {
         SceneManager.LoadScene(1);
