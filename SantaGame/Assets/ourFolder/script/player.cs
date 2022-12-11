@@ -10,6 +10,8 @@ public class player : MonoBehaviour
     public Text HPtext;
 
     Animator anim;
+    bool IsPause;
+    public Image pause;
 
     private void Awake()
     {
@@ -20,12 +22,35 @@ public class player : MonoBehaviour
     void Start()
     {
         anim = GetComponentInChildren<Animator>();
+        IsPause = false;
     }
 
     void Update()
     {
         Shooting();
         HPbar();
+        escDown();
+    }
+
+    void escDown()
+    {
+        if (Input.GetKeyDown(KeyCode.Escape))
+        {
+            if (!IsPause)   //°ÔÀÓ ÁøÇàÁßÀÌ¸é
+            {
+                Time.timeScale = 0; //¸ØÃß±â
+                pause.gameObject.SetActive(true);   //¸ØÃèÀ» ¶§ Ã¢ Ç¥½Ã
+                IsPause = true;     //°ÔÀÓ ¸ØÃã Ç¥½Ã
+                return;
+            }
+            if (IsPause)   //°ÔÀÓ ¸ØÃãÀÌ¸é
+            {
+                Time.timeScale = 1; //ÁøÇàÇÏ±â
+                pause.gameObject.SetActive(false);   //¸ØÃèÀ» ¶§ Ã¢ ´Ý±â
+                IsPause = false;     //°ÔÀÓ ÁøÇàÁß Ç¥½Ã
+                return;
+            }
+        }
     }
     
     void Shooting()
