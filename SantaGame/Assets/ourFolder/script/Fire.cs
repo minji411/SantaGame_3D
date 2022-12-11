@@ -11,6 +11,8 @@ public class Fire : MonoBehaviour
     [SerializeField] GameObject[] GBullet;
     bool changebullet = false;
 
+    public player player;
+
     void Start()
     {
         audioSource = GetComponent<AudioSource>();
@@ -26,7 +28,7 @@ public class Fire : MonoBehaviour
                 changebullet = false;
             Debug.Log(changebullet);
         }
-        if (Input.GetMouseButtonDown(0))
+        if (Input.GetMouseButtonDown(0) && !player.IsPause)
         {
             if (changebullet == false)
             {

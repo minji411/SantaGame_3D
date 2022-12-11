@@ -102,8 +102,8 @@ public class player2 : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        Cursor.visible = false; //마우스 커서를 보이지 않게
-        Cursor.lockState = CursorLockMode.Locked; //마우스 커서 위치 고정
+        //Cursor.visible = false; //마우스 커서를 보이지 않게
+        //Cursor.lockState = CursorLockMode.Locked; //마우스 커서 위치 고정
         capsuleCollider = GetComponent<CapsuleCollider>();
         prigidbody = GetComponent<Rigidbody>();
         prigidbody.freezeRotation = true; //회전 못하게 고정

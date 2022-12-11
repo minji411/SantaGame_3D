@@ -10,7 +10,7 @@ public class player : MonoBehaviour
     public Text HPtext;
 
     Animator anim;
-    bool IsPause;
+    public bool IsPause;
     public Image pause;
 
     private void Awake()
@@ -21,25 +21,23 @@ public class player : MonoBehaviour
 
     void Start()
     {
+        Cursor.visible = false; //커서 안 보이게
+        Cursor.lockState = CursorLockMode.Locked; //마우스 커서 위치 고정
         anim = GetComponentInChildren<Animator>();
         IsPause = false;
     }
 
     void Update()
     {
-        Shooting();
         HPbar();
-        escDown();
-    }
-
-    void escDown()
-    {
-        if (Input.GetKeyDown(KeyCode.Escape))
+        if (Input.GetKeyDown(KeyCode.E))
         {
             if (!IsPause)   //게임 진행중이면
             {
                 Time.timeScale = 0; //멈추기
                 pause.gameObject.SetActive(true);   //멈췄을 때 창 표시
+                Cursor.visible = true; //커서 보이게
+                Cursor.lockState = CursorLockMode.Confined; //마우스 커서 게임 위에만
                 IsPause = true;     //게임 멈춤 표시
                 return;
             }
@@ -47,9 +45,15 @@ public class player : MonoBehaviour
             {
                 Time.timeScale = 1; //진행하기
                 pause.gameObject.SetActive(false);   //멈췄을 때 창 닫기
+                Cursor.visible = false; //커서 안 보이게
+                Cursor.lockState = CursorLockMode.Locked; //마우스 커서 위치 고정
                 IsPause = false;     //게임 진행중 표시
                 return;
             }
+        }
+        else if (!IsPause)
+        {
+            Shooting();
         }
     }
     
