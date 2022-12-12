@@ -12,6 +12,9 @@ EditorBuildSettings:
     path: Assets/ourFolder/Scenes/title.unity
     guid: df0cc48fd5ea15b4d848d3f5579a8fc6
   - enabled: 1
-    path: Assets/ourFolder/Scenes/1 1.unity
+    path: Assets/ourFolder/Scenes/game.unity
     guid: 712c7ead44e08f547b95c641fc6094e5
+  - enabled: 1
+    path: Assets/ourFolder/Scenes/failure.unity
+    guid: 50afd5f61e51ca24abc1ef532803a9d5
   m_configObjects: {}

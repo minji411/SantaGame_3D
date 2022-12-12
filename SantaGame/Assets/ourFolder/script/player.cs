@@ -14,6 +14,8 @@ public class player : MonoBehaviour
     public bool IsPause;
     public Image pause;
 
+    public int delivedGift;
+
     private void Awake()
     {
         HPgauge = GameObject.Find("HPgauge").GetComponent<Image>();
@@ -56,6 +58,16 @@ public class player : MonoBehaviour
         {
             Shooting();
         }
+
+        if (santaHP <= 0)
+        {
+            SceneManager.LoadScene("failure");
+        }
+
+        if (delivedGift == 7)
+        {
+            SceneManager.LoadScene("success");
+        }
     }
     
     void Shooting()
@@ -72,15 +84,12 @@ public class player : MonoBehaviour
     public void Damaged()
     {
         santaHP = santaHP - 10;
-
-   
     }
 
     public void HPbar()
     {
         HPgauge.fillAmount = santaHP / 100f;
         HPtext.text = string.Format("HP {0}/100", santaHP);
-
     }
 }
 

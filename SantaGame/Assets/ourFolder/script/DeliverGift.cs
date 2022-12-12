@@ -8,6 +8,8 @@ public class DeliverGift: MonoBehaviour
     //[SerializeField] private GameObject effect;
     //[SerializeField] private AudioSource sound;
 
+    public player player;
+
     private void Start()
     {
 
@@ -17,7 +19,7 @@ public class DeliverGift: MonoBehaviour
         if (other.gameObject.tag == "Gift")
         {
             sock.gameObject.SetActive(false);
-            
+            player.delivedGift++;
         }
     }
 

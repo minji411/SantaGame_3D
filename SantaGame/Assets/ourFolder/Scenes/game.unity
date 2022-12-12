@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 1526980366}
-  m_IndirectSpecularColor: {r: 0.081974365, g: 0.087371364, b: 0.17045403, a: 1}
+  m_IndirectSpecularColor: {r: 0.0824694, g: 0.08786361, b: 0.17095631, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -1968,6 +1968,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   sock: {fileID: 1016992803}
+  player: {fileID: 0}
 --- !u!224 &709133365 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 5955352275944648683, guid: b6e967ab6d8ece84695734cf34e509ff,
@@ -2096,6 +2097,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   sock: {fileID: 1800568599}
+  player: {fileID: 0}
 --- !u!1001 &908083454
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2264,7 +2266,6 @@ GameObject:
   m_Component:
   - component: {fileID: 924024395}
   - component: {fileID: 924024396}
-  - component: {fileID: 924024397}
   m_Layer: 0
   m_Name: ThridCamera
   m_TagString: Untagged
@@ -2324,19 +2325,6 @@ MonoBehaviour:
   pitch: 0
   yaw: 0
   controllCan: 1
---- !u!114 &924024397
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 924024390}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 30b8a1a53976a914b99cd8236f40dd8c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  pause: {fileID: 0}
 --- !u!1001 &927186844
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3510,6 +3498,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   sock: {fileID: 2012476726}
+  player: {fileID: 0}
 --- !u!1 &1016992803 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 31c3abf4bddc6cf4499ad59015135764,
@@ -3564,6 +3553,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   sock: {fileID: 1944588262}
+  player: {fileID: 0}
 --- !u!1001 &1058816495
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3973,6 +3963,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   sock: {fileID: 2136797140}
+  player: {fileID: 0}
 --- !u!1 &1395943594 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 7996837596736955823, guid: 7a03a0b84c8fc8e49a07d9906d68bc88,
@@ -4021,6 +4012,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   sock: {fileID: 458890984}
+  player: {fileID: 0}
 --- !u!1 &1410451158
 GameObject:
   m_ObjectHideFlags: 0
@@ -4685,6 +4677,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   sock: {fileID: 919132147915873746}
+  player: {fileID: 0}
 --- !u!1001 &1638542709
 PrefabInstance:
   m_ObjectHideFlags: 0

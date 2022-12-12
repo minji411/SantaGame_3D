@@ -861,7 +861,7 @@ Light:
   serializedVersion: 10
   m_Type: 1
   m_Shape: 0
-  m_Color: {r: 0.16981131, g: 0.16981131, b: 0.16981131, a: 1}
+  m_Color: {r: 0, g: 0, b: 0, a: 1}
   m_Intensity: 1
   m_Range: 10
   m_SpotAngle: 30
@@ -1794,6 +1794,7 @@ GameObject:
   - component: {fileID: 1053123458}
   - component: {fileID: 1053123457}
   - component: {fileID: 1053123459}
+  - component: {fileID: 1053123460}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -1933,6 +1934,18 @@ MonoBehaviour:
   blendDistance: 0
   weight: 1
   sharedProfile: {fileID: 11400000, guid: 9f8d761aa7f3f294ea75ee487f044e97, type: 2}
+--- !u!114 &1053123460
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1053123452}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2a237be0df226be4c945607c229ecb9e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &1062564812
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2698,7 +2711,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1533767472}
         m_TargetAssemblyTypeName: BTNclick, Assembly-CSharp
-        m_MethodName: HowToWindowOpen
+        m_MethodName: GoToTitle
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -2920,7 +2933,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1581068318}
         m_TargetAssemblyTypeName: BTNclick, Assembly-CSharp
-        m_MethodName: next
+        m_MethodName: Restart
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
