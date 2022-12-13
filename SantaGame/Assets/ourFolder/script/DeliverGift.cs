@@ -16,10 +16,11 @@ public class DeliverGift: MonoBehaviour
     }
     private void OnCollisionEnter(Collision other)
     {
-        if (other.gameObject.tag == "Gift")
+        if (other.gameObject.tag == "Gift" && !player.delHouse.Contains(gameObject))
         {
             sock.gameObject.SetActive(false);
             player.delivedGift++;
+            player.delHouse.Add(gameObject);
         }
     }
 

@@ -41,6 +41,7 @@ public class player2 : MonoBehaviour
     public Image HPgauge;
     public Text HPtext;
     public int delivedGift;
+    public List<GameObject> delHouse = new List<GameObject>();
     public Image pause;
 
     int isJ = 0;
@@ -113,8 +114,8 @@ public class player2 : MonoBehaviour
     {
         HPgauge = GameObject.Find("HPgauge").GetComponent<Image>();
         HPtext = GameObject.Find("HPtext").GetComponent<Text>();
-        //Cursor.visible = false; //마우스 커서를 보이지 않게
-        //Cursor.lockState = CursorLockMode.Locked; //마우스 커서 위치 고정
+        Cursor.visible = false; //마우스 커서를 보이지 않게
+        Cursor.lockState = CursorLockMode.Locked; //마우스 커서 위치 고정
         capsuleCollider = GetComponent<CapsuleCollider>();
         prigidbody = GetComponent<Rigidbody>();
         prigidbody.freezeRotation = true; //회전 못하게 고정
@@ -133,22 +134,22 @@ public class player2 : MonoBehaviour
         Shooting();
         if (Input.GetKeyDown(KeyCode.E))
         {
-            if (!IsPause)   //???? ??????????
+            if (!IsPause)
             {
-                Time.timeScale = 0; //??????
-                pause.gameObject.SetActive(true);   //?????? ?? ?? ????
-                Cursor.visible = true; //???? ??????
-                Cursor.lockState = CursorLockMode.Confined; //?????? ???? ???? ??????
-                IsPause = true;     //???? ???? ????
+                Time.timeScale = 0;
+                pause.gameObject.SetActive(true);
+                Cursor.visible = true;
+                Cursor.lockState = CursorLockMode.Confined;
+                IsPause = true;
                 return;
             }
-            if (IsPause)   //???? ????????
+            if (IsPause)
             {
-                Time.timeScale = 1; //????????
-                pause.gameObject.SetActive(false);   //?????? ?? ?? ????
-                Cursor.visible = false; //???? ?? ??????
-                Cursor.lockState = CursorLockMode.Locked; //?????? ???? ???? ????
-                IsPause = false;     //???? ?????? ????
+                Time.timeScale = 1;
+                pause.gameObject.SetActive(false);
+                Cursor.visible = false;
+                Cursor.lockState = CursorLockMode.Locked;
+                IsPause = false;
                 return;
             }
         }

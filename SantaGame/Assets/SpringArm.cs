@@ -111,8 +111,8 @@ public class SpringArm : MonoBehaviour
         if (doCollisionTest)
             CheckCollisions();
 
-        UnityEngine.Cursor.visible = false;                     //마우스 커서가 보이지 않게 함
-        UnityEngine.Cursor.lockState = CursorLockMode.Locked;
+        //UnityEngine.Cursor.visible = false;                     //마우스 커서가 보이지 않게 함
+        //UnityEngine.Cursor.lockState = CursorLockMode.Locked;
 
         // set the socketPosition
         SetSocketTransform();
