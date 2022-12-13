@@ -32,9 +32,10 @@ public class EnemyCtr : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        float mag;
-        mag = target.position.magnitude - this.gameObject.transform.position.magnitude;
-        if (Mathf.Abs(mag) <= 25.0)
+        Vector3 disvec = target.position - this.gameObject.transform.position;
+        float mag = Vector3.Magnitude(disvec);
+        
+        if (Mathf.Abs(mag) <= 45.0)
         {
             agent.destination = target.position;
         }
