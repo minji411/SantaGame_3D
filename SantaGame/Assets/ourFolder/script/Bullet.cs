@@ -13,7 +13,7 @@ public class Bullet : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        transform.Translate(transform.forward * 1f);
+        transform.Translate(transform.forward * Time.deltaTime * 45f);
     }
 
     private void OnCollisionEnter(Collision collision)
