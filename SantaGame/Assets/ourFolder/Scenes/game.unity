@@ -3940,6 +3940,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   sock: {fileID: 1016992803}
   player: {fileID: 1468662536}
+  clip: {fileID: 8300000, guid: 2f52496ac6e53f645831e8636fbe0ef4, type: 3}
 --- !u!224 &709133365 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 5955352275944648683, guid: b6e967ab6d8ece84695734cf34e509ff,
@@ -4356,6 +4357,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   sock: {fileID: 1800568599}
   player: {fileID: 1468662536}
+  clip: {fileID: 8300000, guid: 2f52496ac6e53f645831e8636fbe0ef4, type: 3}
 --- !u!1001 &837209766
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -5889,6 +5891,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   sock: {fileID: 2012476726}
   player: {fileID: 1468662536}
+  clip: {fileID: 8300000, guid: 2f52496ac6e53f645831e8636fbe0ef4, type: 3}
 --- !u!1 &1016992803 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 31c3abf4bddc6cf4499ad59015135764,
@@ -5972,6 +5975,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   sock: {fileID: 1944588262}
   player: {fileID: 1468662536}
+  clip: {fileID: 8300000, guid: 2f52496ac6e53f645831e8636fbe0ef4, type: 3}
 --- !u!1 &1050006380 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 929fe5f109e1f6649b6e9fd6d810aa59,
@@ -7180,6 +7184,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   sock: {fileID: 2136797140}
   player: {fileID: 1468662536}
+  clip: {fileID: 8300000, guid: 2f52496ac6e53f645831e8636fbe0ef4, type: 3}
 --- !u!1001 &1266164637
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -7779,6 +7784,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   sock: {fileID: 458890984}
   player: {fileID: 1468662536}
+  clip: {fileID: 8300000, guid: 2f52496ac6e53f645831e8636fbe0ef4, type: 3}
 --- !u!1 &1410451158
 GameObject:
   m_ObjectHideFlags: 0
@@ -9022,6 +9028,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   sock: {fileID: 919132147915873746}
   player: {fileID: 1468662536}
+  clip: {fileID: 8300000, guid: 2f52496ac6e53f645831e8636fbe0ef4, type: 3}
 --- !u!1001 &1638542709
 PrefabInstance:
   m_ObjectHideFlags: 0

@@ -9,6 +9,7 @@ public class DeliverGift: MonoBehaviour
     //[SerializeField] private AudioSource sound;
 
     public player2 player;
+    public AudioClip clip;
 
     private void Start()
     {
@@ -18,6 +19,7 @@ public class DeliverGift: MonoBehaviour
     {
         if (other.gameObject.tag == "Gift" && !player.delHouse.Contains(gameObject))
         {
+            SoundManager.instance.SFXPlay("delivered", clip);
             sock.gameObject.SetActive(false);
             player.delivedGift++;
             player.delHouse.Add(gameObject);
