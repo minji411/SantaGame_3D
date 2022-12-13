@@ -1,7 +1,6 @@
 //using UnityEditor;
 using System.Linq.Expressions;
 using UnityEngine;
-
 using UnityEngine.UIElements;
 
 [ExecuteAlways]
@@ -112,8 +111,13 @@ public class SpringArm : MonoBehaviour
         if (doCollisionTest)
             CheckCollisions();
 
+        UnityEngine.Cursor.visible = false;                     //마우스 커서가 보이지 않게 함
+        UnityEngine.Cursor.lockState = CursorLockMode.Locked;
+
         // set the socketPosition
         SetSocketTransform();
+
+      
 
         // handle mouse inputs for rotations
         if (useControlRotation && Application.isPlaying && controllCan)

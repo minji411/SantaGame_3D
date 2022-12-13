@@ -8,11 +8,11 @@ public class DeliverGift: MonoBehaviour
     //[SerializeField] private GameObject effect;
     //[SerializeField] private AudioSource sound;
 
-    public player player;
+    public player2 player;
 
     private void Start()
     {
-
+        player = GameObject.Find("Player").GetComponent<player2>();
     }
     private void OnCollisionEnter(Collision other)
     {

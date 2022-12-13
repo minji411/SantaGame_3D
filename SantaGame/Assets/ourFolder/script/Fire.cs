@@ -11,7 +11,7 @@ public class Fire : MonoBehaviour
     [SerializeField] GameObject[] GBullet;
     bool changebullet = false;
 
-    public player player;
+    public player2 player;
 
     void Start()
     {
@@ -34,14 +34,14 @@ public class Fire : MonoBehaviour
             {
                 int i = Random.Range(0, 3);
                 SBullet = Bullet[i];
-                Instantiate(SBullet, FirePos.transform.position, FirePos.transform.rotation);
+                Instantiate(SBullet, transform.position, transform.rotation);
                 audioSource.Play();
             }
             else if (changebullet==true)
             {
                 int i = Random.Range(0, 3);
                 SBullet = GBullet[i];
-                Instantiate(SBullet, FirePos.transform.position, FirePos.transform.rotation);
+                Instantiate(SBullet, transform.position, transform.rotation);
                 audioSource.Play();
             }
         }

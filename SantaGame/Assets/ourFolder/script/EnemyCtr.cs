@@ -7,7 +7,7 @@ public class EnemyCtr : MonoBehaviour
 {
     int enemyHP = 60;
 
-    public player player;
+    public player2 player;
 
     NavMeshAgent agent;
 
@@ -20,7 +20,7 @@ public class EnemyCtr : MonoBehaviour
     private void Awake()
     {
         agent = GetComponent<NavMeshAgent>();
-        player = GameObject.Find("Player").GetComponent<player>();
+        player = GameObject.Find("Player").GetComponent<player2>();
     }
 
     // Start is called before the first frame update
