@@ -40,6 +40,7 @@ public class player2 : MonoBehaviour
     int santaHP = 100;
     public Image HPgauge;
     public Text HPtext;
+    public Text giftCount;
     public int delivedGift;
     public List<GameObject> delHouse = new List<GameObject>();
     public Image pause;
@@ -114,6 +115,7 @@ public class player2 : MonoBehaviour
     {
         HPgauge = GameObject.Find("HPgauge").GetComponent<Image>();
         HPtext = GameObject.Find("HPtext").GetComponent<Text>();
+        giftCount = GameObject.Find("deliverdCount").GetComponent<Text>();
         Cursor.visible = false; //마우스 커서를 보이지 않게
         Cursor.lockState = CursorLockMode.Locked; //마우스 커서 위치 고정
         capsuleCollider = GetComponent<CapsuleCollider>();
@@ -168,6 +170,7 @@ public class player2 : MonoBehaviour
             SceneManager.LoadScene("success");
         }
         HPbar();
+        giftCount.text = string.Format("{0}/7", delivedGift);
     }
     private void FixedUpdate()
     {
