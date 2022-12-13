@@ -3,7 +3,11 @@ guid: 3c409275dc1ce3a4fb747564a1d4b5b7
 MonoImporter:
   externalObjects: {}
   serializedVersion: 2
-  defaultReferences: []
+  defaultReferences:
+  - player: {instanceID: 0}
+  - target: {instanceID: 0}
+  - clipDamage: {fileID: 8300000, guid: c285f5048c7a38f48b077828ed9885ad, type: 3}
+  - clipAttack: {fileID: 8300000, guid: 2b7cee1db63faae45912f3f3049b1648, type: 3}
   executionOrder: 0
   icon: {instanceID: 0}
   userData: 

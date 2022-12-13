@@ -26,13 +26,18 @@ public class EnemyCtr : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+
     }
 
     // Update is called once per frame
     void Update()
     {
-        agent.destination = target.position;
+        float mag;
+        mag = target.position.magnitude - this.gameObject.transform.position.magnitude;
+        if (Mathf.Abs(mag) <= 25.0)
+        {
+            agent.destination = target.position;
+        }
 
         if(enemyHP <= 0)
         {
