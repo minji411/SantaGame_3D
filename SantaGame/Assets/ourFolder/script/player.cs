@@ -24,8 +24,8 @@ public class player : MonoBehaviour
 
     void Start()
     {
-        Cursor.visible = false; //커서 안 보이게
-        Cursor.lockState = CursorLockMode.Locked; //마우스 커서 위치 고정
+        Cursor.visible = false; //???? ?? ??????
+        Cursor.lockState = CursorLockMode.Locked; //?????? ???? ???? ????
         anim = GetComponentInChildren<Animator>();
         IsPause = false;
     }
@@ -35,22 +35,22 @@ public class player : MonoBehaviour
         HPbar();
         if (Input.GetKeyDown(KeyCode.E))
         {
-            if (!IsPause)   //게임 진행중이면
+            if (!IsPause)   //???? ??????????
             {
-                Time.timeScale = 0; //멈추기
-                pause.gameObject.SetActive(true);   //멈췄을 때 창 표시
-                Cursor.visible = true; //커서 보이게
-                Cursor.lockState = CursorLockMode.Confined; //마우스 커서 게임 위에만
-                IsPause = true;     //게임 멈춤 표시
+                Time.timeScale = 0; //??????
+                pause.gameObject.SetActive(true);   //?????? ?? ?? ????
+                Cursor.visible = true; //???? ??????
+                Cursor.lockState = CursorLockMode.Confined; //?????? ???? ???? ??????
+                IsPause = true;     //???? ???? ????
                 return;
             }
-            if (IsPause)   //게임 멈춤이면
+            if (IsPause)   //???? ????????
             {
-                Time.timeScale = 1; //진행하기
-                pause.gameObject.SetActive(false);   //멈췄을 때 창 닫기
-                Cursor.visible = false; //커서 안 보이게
-                Cursor.lockState = CursorLockMode.Locked; //마우스 커서 위치 고정
-                IsPause = false;     //게임 진행중 표시
+                Time.timeScale = 1; //????????
+                pause.gameObject.SetActive(false);   //?????? ?? ?? ????
+                Cursor.visible = false; //???? ?? ??????
+                Cursor.lockState = CursorLockMode.Locked; //?????? ???? ???? ????
+                IsPause = false;     //???? ?????? ????
                 return;
             }
         }

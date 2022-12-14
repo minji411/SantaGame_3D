@@ -2,8 +2,11 @@
 using System.Collections;
 using System.Collections.Generic;
 using System.Runtime.CompilerServices;
+using TMPro;
 using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public enum MovementState
 {
@@ -32,7 +35,16 @@ public class player2 : MonoBehaviour
 
     public MovementState state;
 
+    public bool IsPause;
+    public int enemy_Damage_value;
     bool isjump = false;
+    int santaHP = 100;
+    public Image HPgauge;
+    public TextMeshProUGUI HPtext;
+    public TextMeshProUGUI giftCount;
+    public int delivedGift;
+    public List<GameObject> delHouse = new List<GameObject>();
+    public Image pause;
 
     int isJ = 0;
     Animator anim;
@@ -86,7 +98,8 @@ public class player2 : MonoBehaviour
 
     #endregion
     #region Vector3
-
+    float hitTime = 1.5f;
+    float curTime = 0;
     public Vector3 moveDir;
     Vector3 moveVec;
     #endregion
@@ -102,8 +115,11 @@ public class player2 : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        //Cursor.visible = false; //마우스 커서를 보이지 않게
-        //Cursor.lockState = CursorLockMode.Locked; //마우스 커서 위치 고정
+        HPgauge = GameObject.Find("HPgauge").GetComponent<Image>();
+        HPtext = GameObject.Find("HPtext").GetComponent<TextMeshProUGUI>();
+        giftCount = GameObject.Find("deliverdCount").GetComponent<TextMeshProUGUI>();
+        Cursor.visible = false; //마우스 커서를 보이지 않게
+        Cursor.lockState = CursorLockMode.Locked; //마우스 커서 위치 고정
         capsuleCollider = GetComponent<CapsuleCollider>();
         prigidbody = GetComponent<Rigidbody>();
         prigidbody.freezeRotation = true; //회전 못하게 고정
@@ -119,19 +135,71 @@ public class player2 : MonoBehaviour
         GroundCheck();
         DragCtrl();
         Jump();
+        Shooting();
+        curTime += Time.deltaTime;
+        if (Input.GetKeyDown(KeyCode.E))
+        {
+            if (!IsPause)
+            {
+                Time.timeScale = 0;
+                pause.gameObject.SetActive(true);
+                Cursor.visible = true;
+                Cursor.lockState = CursorLockMode.Confined;
+                IsPause = true;
+                return;
+            }
+            if (IsPause)
+            {
+                Time.timeScale = 1;
+                pause.gameObject.SetActive(false);
+                Cursor.visible = false;
+                Cursor.lockState = CursorLockMode.Locked;
+                IsPause = false;
+                return;
+            }
+        }
+        else if (!IsPause)
+        {
+            Shooting();
+        }
+
+        if (santaHP <= 0)
+        {
+            SceneManager.LoadScene("failure");
+        }
+
+        if (delivedGift == 7)
+        {
+            SceneManager.LoadScene("success");
+        }
+        HPbar();
+        giftCount.text = string.Format("{0}/7", delivedGift);
     }
     private void FixedUpdate()
     {
         MoveMent3D();
     }
+    public void HPbar()
+    {
+        HPgauge.fillAmount = santaHP / 100f;
+        HPtext.text = string.Format("HP {0}/100", santaHP);
+    }
     void Jump()
     {
-        if (Input.GetKeyDown(KeyCode.Space) && !isjump && isJ < 2)
+        if (Input.GetKeyDown(KeyCode.Space))
         {
-            prigidbody.AddForce(Vector3.up * jumpForce, ForceMode.Impulse);
+            //prigidbody.AddForce(Vector3.up * jumpForce, ForceMode.Impulse);
             anim.SetBool("DoJump", true);
             isjump = true;
             isJ++;
+        }
+    }
+    public void Damaged()
+    {        
+        if (curTime > hitTime)
+        {
+            curTime = 0;
+            santaHP = santaHP - enemy_Damage_value;
         }
     }
     public void InputKey()
@@ -141,6 +209,18 @@ public class player2 : MonoBehaviour
         moveVec = new Vector3(hAxis, 0, vAxis).normalized;
         anim.SetBool("IsRun", moveVec != Vector3.zero);
     }
+
+    void Shooting()
+    {
+        //transform.Rotate(0f, rotAxis * bspeed, 0f, Space.Self);
+        //transform.Rotate(Input.GetAxis("Mouse Y") * bspeed, 0f, 0f);
+
+        if (Input.GetMouseButtonDown(0))
+        {
+            anim.SetTrigger("DoShot");
+        }
+    }
+
     public void DragCtrl()
     {
         if (grounded)

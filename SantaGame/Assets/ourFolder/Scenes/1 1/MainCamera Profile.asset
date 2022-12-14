@@ -37,7 +37,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c74b981ab35fcb1468c7aaf9752b24e1, type: 3}
   m_Name: CloudShadows
   m_EditorClassIdentifier: 
-  active: 1
+  active: 0
   texture:
     m_OverrideState: 1
     m_Value: {fileID: 2800000, guid: 32ef32965c344ed4c9af86f0dc15661a, type: 3}
@@ -84,7 +84,7 @@ MonoBehaviour:
     m_Value: 2
   globalDensity:
     m_OverrideState: 1
-    m_Value: 0.017
+    m_Value: 0.048
   fogStartDistance:
     m_OverrideState: 1
     m_Value: 26.77
@@ -115,13 +115,13 @@ MonoBehaviour:
     m_Value: 1
   distanceDensity:
     m_OverrideState: 1
-    m_Value: 1
+    m_Value: 0.03
   useRadialDistance:
     m_OverrideState: 1
     m_Value: 1
   skyboxInfluence:
     m_OverrideState: 1
-    m_Value: 0.497
+    m_Value: 1
   enableDirectionalLight:
     m_OverrideState: 1
     m_Value: 1
@@ -148,10 +148,10 @@ MonoBehaviour:
     m_Value: 1
   height:
     m_OverrideState: 1
-    m_Value: 10
+    m_Value: 31.26
   heightDensity:
     m_OverrideState: 1
-    m_Value: 0.75
+    m_Value: 0.2
   heightFogNoise:
     m_OverrideState: 1
     m_Value: 1
@@ -161,10 +161,10 @@ MonoBehaviour:
     dimension: 1
   heightNoiseSize:
     m_OverrideState: 1
-    m_Value: 0.146
+    m_Value: 0.14
   heightNoiseStrength:
     m_OverrideState: 1
-    m_Value: 0
+    m_Value: 0.895
   heightNoiseSpeed:
     m_OverrideState: 1
     m_Value: 1.57
@@ -310,7 +310,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5485954d14dfb9a4c8ead8edb0ded5b1, type: 3}
   m_Name: LiftGammaGain
   m_EditorClassIdentifier: 
-  active: 1
+  active: 0
   lift:
     m_OverrideState: 1
     m_Value: {x: 1, y: 1, z: 1, w: -0.004050346}

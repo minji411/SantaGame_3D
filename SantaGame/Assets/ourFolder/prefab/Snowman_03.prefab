@@ -11,7 +11,6 @@ GameObject:
   - component: {fileID: 834159278348649103}
   - component: {fileID: 673488881782294581}
   - component: {fileID: 5751738191430279255}
-  - component: {fileID: 4825145001881013306}
   - component: {fileID: 6911470751272211701}
   - component: {fileID: 7876220001924156051}
   - component: {fileID: 1707534577040719129}
@@ -82,22 +81,8 @@ Rigidbody:
   m_UseGravity: 1
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 80
+  m_Constraints: 126
   m_CollisionDetection: 0
---- !u!136 &4825145001881013306
-CapsuleCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 828821214802747585}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  m_Radius: 0.5650134
-  m_Height: 2.0241365
-  m_Direction: 1
-  m_Center: {x: -0.0045371056, y: 1.0024571, z: 0.090293884}
 --- !u!114 &6911470751272211701
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -124,7 +109,7 @@ NavMeshAgent:
   m_Enabled: 1
   m_AgentTypeID: 0
   m_Radius: 0.5
-  m_Speed: 3.5
+  m_Speed: 10
   m_Acceleration: 8
   avoidancePriority: 50
   m_AngularSpeed: 120

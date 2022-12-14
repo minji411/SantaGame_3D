@@ -7,7 +7,7 @@ using UnityEngine.UI;
 public class BTNclick : MonoBehaviour
 {
     public Image window;
-    public player player;
+    public player2 player;
 
     // Start is called before the first frame update
     void Start()
@@ -45,8 +45,8 @@ public class BTNclick : MonoBehaviour
     {
         window.gameObject.SetActive(false);
         Time.timeScale = 1; //진행하기
-        /*Cursor.visible = false; //커서 안 보이게
-        Cursor.lockState = CursorLockMode.Locked; //마우스 커서 위치 고정*/
+        //Cursor.visible = false; //커서 안 보이게
+        //Cursor.lockState = CursorLockMode.Locked; //마우스 커서 위치 고정
         player.IsPause = false;     //게임 진행중 표시
     }
 

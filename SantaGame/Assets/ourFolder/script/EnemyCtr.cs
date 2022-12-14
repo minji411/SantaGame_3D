@@ -5,9 +5,10 @@ using UnityEngine.AI;
 
 public class EnemyCtr : MonoBehaviour
 {
-    int enemyHP = 60;
+    [SerializeField]
+     private int enemyHP = 30;
 
-    public player player;
+    public player2 player;
 
     NavMeshAgent agent;
 
@@ -20,19 +21,25 @@ public class EnemyCtr : MonoBehaviour
     private void Awake()
     {
         agent = GetComponent<NavMeshAgent>();
-        player = GameObject.Find("Player").GetComponent<player>();
+        player = GameObject.Find("Player").GetComponent<player2>();
     }
 
     // Start is called before the first frame update
     void Start()
     {
-        
+
     }
 
     // Update is called once per frame
     void Update()
     {
-        agent.destination = target.position;
+        Vector3 disvec = target.position - this.gameObject.transform.position;
+        float mag = Vector3.Magnitude(disvec);
+        
+        if (Mathf.Abs(mag) <= 45.0)
+        {
+            agent.destination = target.position;
+        }
 
         if(enemyHP <= 0)
         {
@@ -50,7 +57,7 @@ public class EnemyCtr : MonoBehaviour
         else if(collision.gameObject.tag == "Weapon")
         {
             SoundManager.instance.SFXPlay("attack", clipAttack);
-            enemyHP = enemyHP - 5;
+            enemyHP = enemyHP - 10;
         }
     }
 }
