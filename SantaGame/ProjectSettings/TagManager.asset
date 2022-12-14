@@ -9,6 +9,8 @@ TagManager:
   - Santa
   - Weapon
   - Gift
+  - House
+  - Sock
   layers:
   - Default
   - TransparentFX

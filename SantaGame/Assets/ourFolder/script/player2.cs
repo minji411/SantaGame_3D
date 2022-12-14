@@ -97,7 +97,8 @@ public class player2 : MonoBehaviour
 
     #endregion
     #region Vector3
-
+    float hitTime = 1.5f;
+    float curTime = 0;
     public Vector3 moveDir;
     Vector3 moveVec;
     #endregion
@@ -134,6 +135,7 @@ public class player2 : MonoBehaviour
         DragCtrl();
         Jump();
         Shooting();
+        curTime += Time.deltaTime;
         if (Input.GetKeyDown(KeyCode.E))
         {
             if (!IsPause)
@@ -192,8 +194,12 @@ public class player2 : MonoBehaviour
         }
     }
     public void Damaged()
-    {
-        santaHP = santaHP - 10;
+    {        
+        if (curTime > hitTime)
+        {
+            curTime = 0;
+            santaHP = santaHP - 10;
+        }
     }
     public void InputKey()
     {

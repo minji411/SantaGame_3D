@@ -7,7 +7,7 @@ public class DeliverGift: MonoBehaviour
     [SerializeField] private GameObject sock;
     //[SerializeField] private GameObject effect;
     //[SerializeField] private AudioSource sound;
-
+    public bool getgift = false;
     public player2 player;
     public AudioClip clip;
 
