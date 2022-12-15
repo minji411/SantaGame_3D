@@ -147,8 +147,6 @@ public class player2 : MonoBehaviour
                 Cursor.lockState = CursorLockMode.Confined;
                 IsPause = true;
 
-                Debug.Log(Cursor.visible);
-
                 return;
             }
             if (IsPause)

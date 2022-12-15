@@ -7,6 +7,9 @@ public class EnemyCtr : MonoBehaviour
 {
     [SerializeField]
      private int enemyHP = 30;
+    public GameObject mesh;
+    public GameObject effect;
+    public Rigidbody rigid;
 
     public player2 player;
 
@@ -43,8 +46,20 @@ public class EnemyCtr : MonoBehaviour
 
         if(enemyHP <= 0)
         {
-            Destroy(this.gameObject);
+            //Destroy(gameObject);
+            mesh.SetActive(false);
+            rigid.velocity = Vector3.zero;
+            rigid.angularVelocity = Vector3.zero;
+            effect.SetActive(true);
+            StartCoroutine(Die());
         }
+    }
+
+    IEnumerator Die()
+    {
+        yield return new WaitForSeconds(3f);
+        effect.SetActive(false);
+        Destroy(gameObject);
     }
 
     private void OnCollisionEnter(Collision collision)
