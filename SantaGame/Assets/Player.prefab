@@ -2654,7 +2654,7 @@ GameObject:
   - component: {fileID: 2356586990524464007}
   - component: {fileID: 8205227329148298792}
   - component: {fileID: 8205227329148298795}
-  - component: {fileID: 8205227329148298793}
+  - component: {fileID: 2912309368854473028}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -2738,7 +2738,7 @@ CapsuleCollider:
   m_Height: 5.468827
   m_Direction: 1
   m_Center: {x: -0.10718871, y: 2.392536, z: -0.00000000355163}
---- !u!114 &8205227329148298793
+--- !u!114 &2912309368854473028
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -2747,14 +2747,20 @@ MonoBehaviour:
   m_GameObject: {fileID: 9016130698478222151}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 90cb7cc1510f34f3b8c633b12000e231, type: 3}
+  m_Script: {fileID: 11500000, guid: 4f91b302405489e479a8551e48ebcaf6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   state: 0
+  IsPause: 0
+  enemy_Damage_value: 0
   HPgauge: {fileID: 0}
   HPtext: {fileID: 0}
+  giftCount: {fileID: 0}
+  delivedGift: 0
+  delHouse: []
+  pause: {fileID: 0}
   WalkSpeed: 20
-  SprintSpeed: 7
+  SprintSpeed: 30
   moveSpeed: 0
   jumpForce: 10
   airMultiplier: 0.4
@@ -2767,7 +2773,7 @@ MonoBehaviour:
   gravityForce: 6
   hAxis: 0
   vAxis: 0
-  groundDrag: 5
+  groundDrag: 2
   grounded: 0
   isJump: 0
   isDash: 0
