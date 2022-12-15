@@ -245,7 +245,7 @@ public class player2 : MonoBehaviour
             vec.y = 0;
             q = Quaternion.LookRotation(vec);
 
-            moveDir = orientation.forward * vAxis * -1 + orientation.right * hAxis * -1;
+            moveDir = orientation.forward * vAxis * -1 + orientation.right * hAxis;
 
 
             if (grounded)
