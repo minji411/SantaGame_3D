@@ -146,6 +146,9 @@ public class player2 : MonoBehaviour
                 Cursor.visible = true;
                 Cursor.lockState = CursorLockMode.Confined;
                 IsPause = true;
+
+                Debug.Log(Cursor.visible);
+
                 return;
             }
             if (IsPause)
@@ -245,7 +248,7 @@ public class player2 : MonoBehaviour
             vec.y = 0;
             q = Quaternion.LookRotation(vec);
 
-            moveDir = orientation.forward * vAxis * -1 + orientation.right * hAxis;
+            moveDir = orientation.forward * vAxis * -1 + orientation.right * hAxis * -1;
 
 
             if (grounded)

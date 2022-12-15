@@ -38,7 +38,7 @@ public class Fire : MonoBehaviour
                 giftMode.gameObject.SetActive(false);
             }
 
-            Debug.Log(changebullet);
+            //Debug.Log(changebullet);
         }
         if (Input.GetMouseButtonDown(0) && !player.IsPause)
         {

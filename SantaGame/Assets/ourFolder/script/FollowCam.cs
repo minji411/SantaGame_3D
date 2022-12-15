@@ -23,8 +23,8 @@ public class FollowCam : MonoBehaviour
 
     private void Update()
     {
-        Cursor.visible = false;
-        Cursor.lockState = CursorLockMode.Locked;
+        //Cursor.visible = false;
+        //Cursor.lockState = CursorLockMode.Locked;
 
         xRot += Input.GetAxis("Mouse Y") * rotSpeed * Time.deltaTime;
         yRot += Input.GetAxis("Mouse X") * rotSpeed * Time.deltaTime;
